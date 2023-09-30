@@ -1,0 +1,46 @@
+{{>navbar}}
+    <section class="container my-5">
+        <div>   
+            <a  href="/add" class="btn btn-primary">Add New Product</a>
+        </div>
+        <div>
+            <form>
+                <input class="form-control" name="searchKey">
+                <input type="submit" class="btn btn-seccess">
+            </form>
+        </div>
+        <table class="table table-stripped mt-4">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#if hasUsers}}
+                {{#each allUsers}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{age}}</td>
+                    <td>
+                        <a href="/show/{{id}}" class="btn btn-success mx-2">Show</a>
+                        <a href="/edit/{{id}}" class="btn btn-warning mx-2">Edit</a>
+                        <a href="/delete/{{id}}" class="btn btn-danger mx-2">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+
+                {{else}}
+                <tr class="bg-danger">
+                    <td colSpan="5" class="text-center">No Users Found</td>
+                </tr>
+                {{/if}}
+            </tbody>
+        </table>
+    </section>
+{{>footer}}

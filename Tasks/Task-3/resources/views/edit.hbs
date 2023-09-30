@@ -1,0 +1,33 @@
+{{>navbar}}
+    <section class="container my-5">
+    <form method="post">
+        <div class="mb-3">
+            <input name="name" placeholder="Name" class="form-control" value="{{userData.name}}">
+        </div>
+        <div class="mb-3">
+            <input name="age" placeholder="Age" class="form-control" value="{{userData.age}}">
+        </div>
+        <div class="mb-3">
+            <input name="email" placeholder="Email" class="form-control" value="{{userData.email}}">
+        </div>
+        {{!-- <div class="mb-3">
+            {{isActive}}
+            {{#unless isActive}} yes{{/unless}}
+            <select name="status">
+                <option 
+                    {{#if isActive}} 
+                        selected
+                    {{/if}}
+                    ">Active</option>
+                <option {{#unless isActive}} selected {{/unless}}>Deactive</option>
+            </select>
+        </div> --}}
+        
+        <div class="mb-3">
+            <input type="submit" value="Edit User" class="btn btn-primary"> 
+        </div>
+
+    </form>
+    </section>
+{{>footer}}
+
