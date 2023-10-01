@@ -8,11 +8,6 @@ const { isAuth, authRoles } = require("../middlewares/auth_middleware");
 //admin and user
 medicineRouter.get("/", medicineController.allmedicines);
 medicineRouter.get("/single/:medicineId", medicineController.singlemedicine);
-medicineRouter.get("/favmedicines", isAuth, medicineController.getUserFavmedicines);
-
-medicineRouter.post("/addtofavourite", isAuth, medicineController.addmedicineToFavourtie);
-
-medicineRouter.delete('/deletefromfav/:medicineId', isAuth, medicineController.deletemedicineFromFav);
 //admin
 medicineRouter.post("/add", isAuth, authRoles("admin"),upload.single("medicineImg"),
 medicineController.addmedicine);

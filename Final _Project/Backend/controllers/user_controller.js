@@ -61,13 +61,13 @@ class User {
       if (!user)
         return res.send({
           success: false,
-          msg: "Invalid username or Password",
+          msg: "Invalid email or Password",
         });
       const isPasswordMatched = await user.comparePassword(password);
       if (!isPasswordMatched)
         return res.send({
           success: false,
-          msg: "Invalid username or Password",
+          msg: "Invalid email or Password",
         });
       const token = await user.getJwtToken();
       res.send({
